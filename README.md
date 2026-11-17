@@ -52,6 +52,7 @@ push / pull_request
   cache takes about as long as downloading, and the system libraries have to be installed anyway.
 - The **full suite**: `npx playwright test --shard=i/4` without `--grep` or `--project` filters.
   `fullyParallel: true` lets the shards split individual tests, not whole files.
+- `runs-on: ubuntu-24.04`, not `ubuntu-latest`: the floating label moves to Ubuntu 26 from October 2026, and a pipeline must not change without a commit.
 - `fail-fast: false` — one red shard does not cancel the others; `concurrency` cancels an outdated run
   when a newer commit is pushed to the same branch.
 - Upload steps use `if: ${{ !cancelled() }}`, so artefacts are published **when tests fail too**.
