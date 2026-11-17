@@ -17,3 +17,9 @@ Thumbs.db
 .vscode/
 .idea/
 .env
+
+# CI reports (JUnit, merged shards, local act runs)
+/reports/
+/all-blob-reports/
+/.act-artifacts/
+.secrets
